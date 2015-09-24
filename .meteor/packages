@@ -21,3 +21,4 @@ twbs:bootstrap
 less
 iron:router
 ejson
+accounts-password
