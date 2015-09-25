@@ -19,10 +19,10 @@ Template.join.events({
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     var confirm = template.$('[name=confirm]').val();
-    console.log(email);
-    console.log(password);
+    var name = template.$('[name=user_name]').val();
 
     var errors = {};
+    var profile = {};
 
     if (!email) {
       errors.email = 'Email required';
@@ -30,6 +30,9 @@ Template.join.events({
 
     if (!password) {
       errors.password = 'Password required';
+    }
+    if (!name) {
+      errors.password = 'Name required';
     }
 
     if (confirm !== password) {
@@ -41,9 +44,12 @@ Template.join.events({
       return;
     }
 
+    profile.name = name;
+
     Accounts.createUser({
       email: email,
-      password: password
+      password: password,
+      profile: profile
     }, function(error) {
       if (error) {
         return Session.set(ERRORS_KEY, {

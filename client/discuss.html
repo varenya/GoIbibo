@@ -1,0 +1,47 @@
+<template name="discuss">
+
+  <div class="chat-panel panel panel-default">
+
+    <div class="panel-heading">
+      <i class="fa fa-comments fa-fw"></i>
+      Chat
+    </div><!--END of Panel Heading-->
+
+    <div class="panel-body">
+      {{>chat}}
+    </div><!--End of Panel Body-->
+
+    <div class="panel-footer">
+      <div class="input-group">
+        <input class="form-control input-sm" id='btn-input' name="chat_text" placeholder="Type your text here .." type="text">
+        <span class="input-group-btn">
+          <button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
+        </span>
+      </div>
+    </div><!--End of Panel Footer-->
+
+  </div>
+
+</template>
+
+<template name="chat">
+  <ul class="chat">
+    <li class="left clearfix">
+      <span class="chat-img pull-left">
+        <img alt="User Avatar" class="img-circle" src="http://placehold.it/50/55C1E7/fff">
+      </span>
+      <div class="chat-body clearfix">
+        <div class="header">
+          <strong class="primary-font">Jack Sparrow</strong>
+          <small class="pull-right text-muted">
+            <i class="fa fa-clock-o fa-fw"></i>
+            12 mins ago
+          </small>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+        </p>
+      </div>
+    </li>
+  </ul>
+</template>
